@@ -7,8 +7,8 @@ parsed_sample:
     device_type: "Microsoft-Workstation"
     domain: "DATA"
     interface: "GigabitEthernet1/0/31"
-    ipv6_address: "Unknown"
     ipv4_address: "10.10.10.190"
+    ipv6_address: "Unknown"
     mac_address: "cc96.abcd.1234"
     method_state_list:
       - "Stopped"
@@ -19,11 +19,13 @@ parsed_sample:
     operational_control_dir: "both"
     operational_host_mode: "multi-auth"
     resultant_policy_sgt: []
-    resultant_policy_vlan_group: ""
+    resultant_policy_vlan_group_id: ""
+    resultant_policy_vlan_group_name: ""
     resultant_policy_vn: ""
     server_policy_sgt:
       - "40"
-    server_policy_vlan_group: "1011"
+    server_policy_vlan_group_id: "1011"
+    server_policy_vlan_group_name: ""
     server_policy_vn: "WALKUPED_VN"
     server_session_timeout: "43200"
     server_template: "PXE-ClosedMode-Template"
