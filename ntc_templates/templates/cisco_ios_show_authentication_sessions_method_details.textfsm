@@ -51,6 +51,7 @@ Start
   ^\s*Local\s+Policies: -> LOCAL_POLICIES
   ^Server\s+Policies: -> SERVER_POLICIES
   ^Resultant\s+Policies: -> RESULTANT_POLICIES
+  ^No\s+sessions\s+match\s+supplied\s+criteria.$$
   ^-+\s*$$
   ^\s*$$
   ^. -> Error
