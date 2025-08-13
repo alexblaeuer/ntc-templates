@@ -330,6 +330,7 @@ cisco_ios_show_object-group.textfsm, .*, cisco_ios, sh[[ow]] ob[[ject-group]]
 cisco_ios_show_power_inline.textfsm, .*, cisco_ios, sh[[ow]] pow[[er]] i[[nline]]
 cisco_ios_show_power_status.textfsm, .*, cisco_ios, sh[[ow]] pow[[er]] st[[atus]]
 cisco_ios_show_rep_topology.textfsm, .*, cisco_ios, sh[[ow]] rep topology
+cisco_ios_show_aaa_servers.textfsm, .*, cisco_ios, sh[[ow]] aaa servers
 cisco_ios_show_access-list.textfsm, .*, cisco_ios, sh[[ow]] acc[[ess-list]]
 cisco_ios_show_isdn_status.textfsm, .*, cisco_ios, sh[[ow]] isd[[n]] st[[atus]]
 cisco_ios_show_stack-power.textfsm, .*, cisco_ios, sh[[ow]] stack-[[power]]

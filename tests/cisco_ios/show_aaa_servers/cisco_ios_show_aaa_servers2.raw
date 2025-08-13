@@ -1,0 +1,62 @@
+
+RADIUS: id 1, priority 1, host 192.0.2.15, auth-port 1812, acct-port 1813
+     State: current UP, duration 79960s, previous duration 223s
+     Dead: total time 223s, count 0
+     Quarantined: No
+     Authen: request 7, timeouts 0, failover 0, retransmission 0
+             Response: accept 6, reject 1, challenge 0
+             Response: unexpected 0, server error 0, incorrect 0, time 760ms
+             Transaction: success 7, failure 0
+             Throttled: transaction 0, timeout 0, failure 0
+     Author: request 0, timeouts 0, failover 0, retransmission 0
+             Response: accept 0, reject 0, challenge 0
+             Response: unexpected 0, server error 0, incorrect 0, time 0ms
+             Transaction: success 0, failure 0
+             Throttled: transaction 0, timeout 0, failure 0
+     Account: request 4, timeouts 0, failover 0, retransmission 0
+             Request: start 2, interim 0, stop 0
+             Response: start 2, interim 0, stop 0
+             Response: unexpected 0, server error 0, incorrect 0, time 9ms
+             Transaction: success 4, failure 0
+             Throttled: transaction 0, timeout 0, failure 0
+     Elapsed time since counters last cleared: 22h16m
+     Estimated Outstanding Access Transactions: 0
+     Estimated Outstanding Accounting Transactions: 0
+     Estimated Throttled Access Transactions: 0
+     Estimated Throttled Accounting Transactions: 0
+     Maximum Throttled Transactions: access 0, accounting 0
+     Requests per minute past 24 hours:
+             high - 22 hours, 11 minutes ago: 4
+             low  - 0 hours, 0 minutes ago: 0
+             average: 0
+
+RADIUS: id 2, priority 2, host 192.0.2.16, auth-port 1812, acct-port 1813
+     State: current UP, duration 79959s, previous duration 222s
+     Dead: total time 222s, count 0
+     Quarantined: No
+     Authen: request 1, timeouts 0, failover 0, retransmission 0
+             Response: accept 0, reject 1, challenge 0
+             Response: unexpected 0, server error 0, incorrect 0, time 5239ms
+             Transaction: success 1, failure 0
+             Throttled: transaction 0, timeout 0, failure 0
+     Author: request 0, timeouts 0, failover 0, retransmission 0
+             Response: accept 0, reject 0, challenge 0
+             Response: unexpected 0, server error 0, incorrect 0, time 0ms
+             Transaction: success 0, failure 0
+             Throttled: transaction 0, timeout 0, failure 0
+     Account: request 0, timeouts 0, failover 0, retransmission 0
+             Request: start 0, interim 0, stop 0
+             Response: start 0, interim 0, stop 0
+             Response: unexpected 0, server error 0, incorrect 0, time 0ms
+             Transaction: success 0, failure 0
+             Throttled: transaction 0, timeout 0, failure 0
+     Elapsed time since counters last cleared: 22h16m
+     Estimated Outstanding Access Transactions: 0
+     Estimated Outstanding Accounting Transactions: 0
+     Estimated Throttled Access Transactions: 0
+     Estimated Throttled Accounting Transactions: 0
+     Maximum Throttled Transactions: access 0, accounting 0
+     Requests per minute past 24 hours:
+             high - 22 hours, 11 minutes ago: 1
+             low  - 0 hours, 0 minutes ago: 0
+             average: 0

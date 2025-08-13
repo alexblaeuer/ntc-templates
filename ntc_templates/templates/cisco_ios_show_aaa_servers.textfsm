@@ -1,0 +1,143 @@
+Value ID (\d+)
+Value PRIORITY (\d+)
+Value HOST (\d+\.\d+\.\d+\.\d+)
+Value AUTHEN_PORT (\d+)
+Value ACCT_PORT (\d+)
+Value HOSTNAME (\S+)
+Value STATE_CURRENT (\S+)
+Value STATE_DURATION (\d+s)
+Value PREV_DURATION (\d+s)
+Value DEAD_TOTAL_TIME (\d+s)
+Value DEAD_COUNT (\d+)
+Value QUARANTINED (\S+)
+Value AUTHEN_REQUEST (\d+)
+Value AUTHEN_TIMEOUTS (\d+)
+Value AUTHEN_FAILOVER (\d+)
+Value AUTHEN_RETRANSMISSION (\d+)
+Value AUTHEN_RESP_ACCEPT (\d+)
+Value AUTHEN_RESP_REJECT (\d+)
+Value AUTHEN_RESP_CHALLENGE (\d+)
+Value AUTHEN_RESP_UNEXPECTED (\d+)
+Value AUTHEN_RESP_SERVER_ERROR (\d+)
+Value AUTHEN_RESP_INCORRECT (\d+)
+Value AUTHEN_RESP_TIME (\d+ms)
+Value AUTHEN_TRANS_SUCCESS (\d+)
+Value AUTHEN_TRANS_FAILURE (\d+)
+Value AUTHEN_THROTTLED_TRANS (\d+)
+Value AUTHEN_THROTTLED_TIMEOUT (\d+)
+Value AUTHEN_THROTTLED_FAILURE (\d+)
+Value AUTHEN_MALFORMED_RESP (\d+)
+Value AUTHEN_BAD_AUTH (\d+)
+Value AUTHOR_REQUEST (\d+)
+Value AUTHOR_TIMEOUTS (\d+)
+Value AUTHOR_FAILOVER (\d+)
+Value AUTHOR_RETRANSMISSION (\d+)
+Value AUTHOR_RESP_ACCEPT (\d+)
+Value AUTHOR_RESP_REJECT (\d+)
+Value AUTHOR_RESP_CHALLENGE (\d+)
+Value AUTHOR_RESP_UNEXPECTED (\d+)
+Value AUTHOR_RESP_SERVER_ERROR (\d+)
+Value AUTHOR_RESP_INCORRECT (\d+)
+Value AUTHOR_RESP_TIME (\d+ms)
+Value AUTHOR_TRANS_SUCCESS (\d+)
+Value AUTHOR_TRANS_FAILURE (\d+)
+Value AUTHOR_THROTTLED_TRANS (\d+)
+Value AUTHOR_THROTTLED_TIMEOUT (\d+)
+Value AUTHOR_THROTTLED_FAILURE (\d+)
+Value AUTHOR_MALFORMED_RESP (\d+)
+Value AUTHOR_BAD_AUTH (\d+)
+Value ACC_REQUEST (\d+)
+Value ACC_TIMEOUTS (\d+)
+Value ACC_FAILOVER (\d+)
+Value ACC_RETRANSMISSION (\d+)
+Value ACC_REQ_START (\d+)
+Value ACC_REQ_INTERIM (\d+)
+Value ACC_REQ_STOP (\d+)
+Value ACC_RESP_START (\d+)
+Value ACC_RESP_INTERIM (\d+)
+Value ACC_RESP_STOP (\d+)
+Value ACC_RESP_UNEXPECTED (\d+)
+Value ACC_RESP_SERVER_ERROR (\d+)
+Value ACC_RESP_INCORRECT (\d+)
+Value ACC_RESP_TIME (\d+ms)
+Value ACC_TRANS_SUCCESS (\d+)
+Value ACC_TRANS_FAILURE (\d+)
+Value ACC_THROTTLED_TRANS (\d+)
+Value ACC_THROTTLED_TIMEOUT (\d+)
+Value ACC_THROTTLED_FAILURE (\d+)
+Value ACC_MALFORMED_RESP (\d+)
+Value ACC_BAD_AUTH (\d+)
+
+Start
+  ^RADIUS: id -> Continue.Record
+  ^RADIUS: id ${ID}, priority ${PRIORITY}, host ${HOST}, auth-port ${AUTHEN_PORT}, acct-port ${ACCT_PORT}, hostname ${HOSTNAME}
+  ^RADIUS: id ${ID}, priority ${PRIORITY}, host ${HOST}, auth-port ${AUTHEN_PORT}, acct-port ${ACCT_PORT}
+  ^\s+State: current ${STATE_CURRENT}, duration ${STATE_DURATION}, previous duration ${PREV_DURATION}
+  ^\s+Dead: total time ${DEAD_TOTAL_TIME}, count ${DEAD_COUNT}
+  ^\s+Platform State from SMD: current \S+, duration \d+s, previous duration \d+s
+  ^\s+SMD Platform Dead: total time \d+s, count \d+
+  ^\s+Platform State from WNCD \S+ : current \S+, duration \d+s, previous duration \d+s
+  ^\s+WNCD Platform Dead: total time \d+s, count \S+
+  ^\s+Quarantined: ${QUARANTINED}
+  ^\s+Authen: request ${AUTHEN_REQUEST}, timeouts ${AUTHEN_TIMEOUTS}, failover ${AUTHEN_FAILOVER}, retransmission ${AUTHEN_RETRANSMISSION} -> Authentication
+  ^\s+Estimated Outstanding Access Transactions: \d+
+  ^\s+Estimated Outstanding Accounting Transactions: \d+
+  ^\s+Estimated Throttled Access Transactions: \d+
+  ^\s+Estimated Throttled Accounting Transactions: \d+
+  ^\s+Maximum Throttled Transactions: access \d+, accounting \d+
+  ^\s+Consecutive Response Failures: total \d+
+  ^\s+SMD Platform : max \d+, current \d+ total \d+
+  ^\s+WNCD Platform: max \d+, current \d+ total \d+
+  ^\s+IOSD Platform : max \d+, current \d+ total \d+
+  ^\s+Consecutive Timeouts: total \d+
+  ^\s+Requests per minute past 24 hours:
+  ^\s+high -
+  ^\s+low  -
+  ^\s+average: \d+
+  # Capture time-stamp if vty line has command time-stamping turned on
+  ^Load\s+for\s+
+  ^Time\s+source\s+is
+  # Match blank lines
+  ^\s*$$
+  # Error out if raw data does not match any above rules.
+  ^. -> Error
+
+Authentication
+  ^\s+Response: accept ${AUTHEN_RESP_ACCEPT}, reject ${AUTHEN_RESP_REJECT}, challenge ${AUTHEN_RESP_CHALLENGE}
+  ^\s+Response: unexpected ${AUTHEN_RESP_UNEXPECTED}, server error ${AUTHEN_RESP_SERVER_ERROR}, incorrect ${AUTHEN_RESP_INCORRECT}, time ${AUTHEN_RESP_TIME}
+  ^\s+Transaction: success ${AUTHEN_TRANS_SUCCESS}, failure ${AUTHEN_TRANS_FAILURE}
+  ^\s+Throttled: transaction ${AUTHEN_THROTTLED_TRANS}, timeout ${AUTHEN_THROTTLED_TIMEOUT}, failure ${AUTHEN_THROTTLED_FAILURE}
+  ^\s+Malformed responses: ${AUTHEN_MALFORMED_RESP}
+  ^\s+Bad authenticators: ${AUTHEN_BAD_AUTH}
+  ^\s+Dot1x transactions:
+  ^\s+MAC auth transactions:
+  ^\s+Response: total responses: \d+, avg response time: \d+ms
+  ^\s+Transaction: timeouts \d+, failover \d+
+  ^\s+Transaction: total \d+, success \d+, failure \d+
+  ^\s+Author: request ${AUTHOR_REQUEST}, timeouts ${AUTHOR_TIMEOUTS}, failover ${AUTHOR_FAILOVER}, retransmission ${AUTHOR_RETRANSMISSION} -> Authorization
+  ^. -> Error
+
+Authorization
+  ^\s+Response: accept ${AUTHOR_RESP_ACCEPT}, reject ${AUTHOR_RESP_REJECT}, challenge ${AUTHOR_RESP_CHALLENGE}
+  ^\s+Response: unexpected ${AUTHOR_RESP_UNEXPECTED}, server error ${AUTHOR_RESP_SERVER_ERROR}, incorrect ${AUTHOR_RESP_INCORRECT}, time ${AUTHOR_RESP_TIME}
+  ^\s+Transaction: success ${AUTHOR_TRANS_SUCCESS}, failure ${AUTHOR_TRANS_FAILURE}
+  ^\s+Throttled: transaction ${AUTHOR_THROTTLED_TRANS}, timeout ${AUTHOR_THROTTLED_TIMEOUT}, failure ${AUTHOR_THROTTLED_FAILURE}
+  ^\s+Malformed responses: ${AUTHOR_MALFORMED_RESP}
+  ^\s+Bad authenticators: ${AUTHOR_BAD_AUTH}
+  ^\s+MAC author transactions:
+  ^\s+Response: total responses: \d+, avg response time: \d+ms
+  ^\s+Transaction: timeouts \d+, failover \d+
+  ^\s+Transaction: total \d+, success \d+, failure \d+
+  ^\s+Account: request ${ACC_REQUEST}, timeouts ${ACC_TIMEOUTS}, failover ${ACC_FAILOVER}, retransmission ${ACC_RETRANSMISSION} -> Accounting
+  ^. -> Error
+
+Accounting
+  ^\s+Request: start ${ACC_REQ_START}, interim ${ACC_REQ_INTERIM}, stop ${ACC_REQ_STOP}
+  ^\s+Response: start ${ACC_RESP_START}, interim ${ACC_RESP_INTERIM}, stop ${ACC_RESP_STOP}
+  ^\s+Response: unexpected ${ACC_RESP_UNEXPECTED}, server error ${ACC_RESP_SERVER_ERROR}, incorrect ${ACC_RESP_INCORRECT}, time ${ACC_RESP_TIME}
+  ^\s+Transaction: success ${ACC_TRANS_SUCCESS}, failure ${ACC_TRANS_FAILURE}
+  ^\s+Throttled: transaction ${ACC_THROTTLED_TRANS}, timeout ${ACC_THROTTLED_TIMEOUT}, failure ${ACC_THROTTLED_FAILURE}
+  ^\s+Malformed responses: ${ACC_MALFORMED_RESP}
+  ^\s+Bad authenticators: ${ACC_BAD_AUTH}
+  ^\s+Elapsed time since counters last cleared: \S+ -> Start
+  ^. -> Error

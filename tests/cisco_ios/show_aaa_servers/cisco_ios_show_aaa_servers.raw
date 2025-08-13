@@ -1,0 +1,136 @@
+
+RADIUS: id 1, priority 1, host 192.0.2.15, auth-port 1812, acct-port 1813, hostname dnac-radius_192.0.2.15
+     State: current UP, duration 4294967s, previous duration 23s
+     Dead: total time 23s, count 2
+     Platform State from SMD: current UP, duration 2849642s, previous duration 745465s
+     SMD Platform Dead: total time 745488s, count 3
+     Platform State from WNCD (0) : current UP, duration 4294967s, previous duration 0s
+     Platform State from WNCD (1) : current UP, duration 4294967s, previous duration 0s
+     Platform State from WNCD (2) : current UP, duration 4294967s, previous duration 0s
+     Platform State from WNCD (3) : current UP, duration 4294967s, previous duration 0s
+     Platform State from WNCD (4) : current UP, duration 4294967s, previous duration 0s
+     Platform State from WNCD (5) : current UP, duration 4294967s, previous duration 0s
+     Platform State from WNCD (6) : current UP, duration 4294967s, previous duration 0s
+     Platform State from WNCD (7) : current UP, duration 4294967s, previous duration 0s
+     WNCD Platform Dead: total time 0s, count 0UP
+     Quarantined: No
+     Authen: request 15837, timeouts 15221, failover 0, retransmission 11417
+             Response: accept 511, reject 22, challenge 83
+             Response: unexpected 0, server error 0, incorrect 15212, time 16ms
+             Transaction: success 616, failure 3804
+             Throttled: transaction 0, timeout 0, failure 0
+             Malformed responses: 0
+             Bad authenticators: 15212
+             Dot1x transactions:
+             Response: total responses: 86, avg response time: 5ms
+             Transaction: timeouts 0, failover 0
+             Transaction: total 3, success 1, failure 2
+             MAC auth transactions:
+             Response: total responses: 528, avg response time: 11ms
+             Transaction: timeouts 0, failover 0
+             Transaction: total 528, success 510, failure 18
+     Author: request 0, timeouts 0, failover 0, retransmission 0
+             Response: accept 0, reject 0, challenge 0
+             Response: unexpected 0, server error 0, incorrect 0, time 0ms
+             Transaction: success 0, failure 0
+             Throttled: transaction 0, timeout 0, failure 0
+             Malformed responses: 0
+             Bad authenticators: 0
+             MAC author transactions:
+             Response: total responses: 0, avg response time: 0ms
+             Transaction: timeouts 0, failover 0
+             Transaction: total 0, success 0, failure 0
+     Account: request 2568, timeouts 509, failover 1, retransmission 382
+             Request: start 537, interim 1126, stop 523
+             Response: start 512, interim 1049, stop 498
+             Response: unexpected 0, server error 0, incorrect 0, time 6ms
+             Transaction: success 2059, failure 127
+             Throttled: transaction 0, timeout 0, failure 0
+             Malformed responses: 0
+             Bad authenticators: 0
+     Elapsed time since counters last cleared: 8w6d23h30m
+     Estimated Outstanding Access Transactions: 0
+     Estimated Outstanding Accounting Transactions: 0
+     Estimated Throttled Access Transactions: 0
+     Estimated Throttled Accounting Transactions: 0
+     Maximum Throttled Transactions: access 0, accounting 0
+     Consecutive Response Failures: total 3929
+             SMD Platform : max 3929, current 0 total 3929
+             WNCD Platform: max 0, current 0 total 0
+             IOSD Platform : max 0, current 0 total 0
+     Consecutive Timeouts: total 15725
+             SMD Platform : max 15718, current 0 total 15723
+             WNCD Platform: max 0, current 0 total 0
+             IOSD Platform : max 2, current 0 total 2
+     Requests per minute past 24 hours:
+             high - 23 hours, 28 minutes ago: 0
+             low  - 23 hours, 28 minutes ago: 0
+             average: 0
+
+RADIUS: id 2, priority 2, host 192.0.2.16, auth-port 1812, acct-port 1813, hostname dnac-radius_192.0.2.16
+     State: current UP, duration 4294967s, previous duration 23s
+     Dead: total time 23s, count 2
+     Platform State from SMD: current UP, duration 2849549s, previous duration 745579s
+     SMD Platform Dead: total time 745601s, count 3
+     Platform State from WNCD (0) : current UP, duration 4294967s, previous duration 0s
+     Platform State from WNCD (1) : current UP, duration 4294967s, previous duration 0s
+     Platform State from WNCD (2) : current UP, duration 4294967s, previous duration 0s
+     Platform State from WNCD (3) : current UP, duration 4294967s, previous duration 0s
+     Platform State from WNCD (4) : current UP, duration 4294967s, previous duration 0s
+     Platform State from WNCD (5) : current UP, duration 4294967s, previous duration 0s
+     Platform State from WNCD (6) : current UP, duration 4294967s, previous duration 0s
+     Platform State from WNCD (7) : current UP, duration 4294967s, previous duration 0s
+     WNCD Platform Dead: total time 0s, count 0UP
+     Quarantined: No
+     Authen: request 15224, timeouts 15220, failover 0, retransmission 11416
+             Response: accept 1, reject 3, challenge 0
+             Response: unexpected 0, server error 0, incorrect 15212, time 65ms
+             Transaction: success 4, failure 3804
+             Throttled: transaction 0, timeout 0, failure 0
+             Malformed responses: 0
+             Bad authenticators: 15212
+             Dot1x transactions:
+             Response: total responses: 0, avg response time: 0ms
+             Transaction: timeouts 0, failover 0
+             Transaction: total 0, success 0, failure 0
+             MAC auth transactions:
+             Response: total responses: 1, avg response time: 107ms
+             Transaction: timeouts 0, failover 0
+             Transaction: total 1, success 1, failure 0
+     Author: request 0, timeouts 0, failover 0, retransmission 0
+             Response: accept 0, reject 0, challenge 0
+             Response: unexpected 0, server error 0, incorrect 0, time 0ms
+             Transaction: success 0, failure 0
+             Throttled: transaction 0, timeout 0, failure 0
+             Malformed responses: 0
+             Bad authenticators: 0
+             MAC author transactions:
+             Response: total responses: 0, avg response time: 0ms
+             Transaction: timeouts 0, failover 0
+             Transaction: total 0, success 0, failure 0
+     Account: request 508, timeouts 507, failover 127, retransmission 380
+             Request: start 26, interim 77, stop 25
+             Response: start 1, interim 0, stop 0
+             Response: unexpected 0, server error 0, incorrect 0, time 9ms
+             Transaction: success 1, failure 127
+             Throttled: transaction 0, timeout 0, failure 0
+             Malformed responses: 0
+             Bad authenticators: 0
+     Elapsed time since counters last cleared: 8w6d23h30m
+     Estimated Outstanding Access Transactions: 0
+     Estimated Outstanding Accounting Transactions: 0
+     Estimated Throttled Access Transactions: 0
+     Estimated Throttled Accounting Transactions: 0
+     Maximum Throttled Transactions: access 0, accounting 0
+     Consecutive Response Failures: total 3929
+             SMD Platform : max 3929, current 0 total 3929
+             WNCD Platform: max 0, current 0 total 0
+             IOSD Platform : max 0, current 0 total 0
+     Consecutive Timeouts: total 15724
+             SMD Platform : max 15718, current 0 total 15722
+             WNCD Platform: max 0, current 0 total 0
+             IOSD Platform : max 2, current 0 total 2
+     Requests per minute past 24 hours:
+             high - 23 hours, 28 minutes ago: 0
+             low  - 23 hours, 28 minutes ago: 0
+             average: 0
